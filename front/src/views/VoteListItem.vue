@@ -8,6 +8,10 @@
       >
         <v-icon>{{ show ? 'mdi-chevron-up' : 'mdi-chevron-down' }}</v-icon>
       </v-btn>
+      <div class="flex-grow-1"></div>
+      <v-btn class="ma-2" text icon color="red lighten-2">
+        <v-icon>mdi-alarm</v-icon>
+      </v-btn>
     </v-card-title>
 
     <v-expand-transition>
@@ -17,21 +21,14 @@
         </v-card-text>
       </div>
     </v-expand-transition>
-    <v-card-text>
+    <v-card-text class="pt-0">
       <span class="green--text">
         Active
       </span>
     </v-card-text>
 
     <v-card-actions>
-      <v-btn text>Share</v-btn>
-
-      <v-btn
-              text
-              color="purple"
-      >
-        Explore
-      </v-btn>
+      <v-btn text @click="goToDetails">Details</v-btn>
 
       <div class="flex-grow-1"></div>
       <v-list-item>
@@ -72,5 +69,10 @@ export default {
   data: () => ({
     show: false,
   }),
+  methods: {
+    goToDetails() {
+      this.$router.push({name: 'vote', params: {id: '1'}});
+    }
+  }
 };
 </script>
