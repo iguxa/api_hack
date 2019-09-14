@@ -6,14 +6,11 @@
         <span class="font-weight-light">MATERIAL DESIGN</span>
       </v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-btn
-        text
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-      >
+      <v-btn text href="https://github.com/vuetifyjs/vuetify/releases/latest" target="_blank">
         <span class="mr-2">Latest Release</span>
       </v-btn>
-      <router-link :to="{name:'about'}">About</router-link>
+      <router-link :to="{name:'about'}" class="mr-2">About</router-link>
+      <router-link :to="{name:'login'}" class="mr-2">Login</router-link>
     </v-app-bar>
 
     <v-content>
@@ -23,15 +20,15 @@
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld';
+//import HelloWorld from './components/HelloWorld';
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld,
+    //HelloWorld,
   },
   data: () => ({
     //
-  }),
+  })
 };
 </script>
