@@ -7,6 +7,7 @@
       <v-spacer></v-spacer>
       <router-link :to="{name:'about'}" class="mr-2">About</router-link>
       <router-link :to="{name:'login'}" class="mr-2">Login</router-link>
+      <router-link :to="{name:'vote'}" class="mr-2">Vote</router-link>
     </v-app-bar>
 
     <v-content>
@@ -16,9 +17,8 @@
 </template>
 
 <script>
-
 export default {
-  name: 'App',
+  name: "App",
   data: () => ({
     //
   })

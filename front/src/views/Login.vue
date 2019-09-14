@@ -11,11 +11,17 @@
               <v-card-text>
                 <v-form>
                   <v-text-field label="E-mail" name="email" type="email" required></v-text-field>
-                  <v-text-field id="password" label="Пароль" name="password" type="password" required></v-text-field>
-              <v-card-actions>
-                <div class="flex-grow-1"></div>
-                <v-btn color="primary" @click="login">Вход</v-btn>
-              </v-card-actions>
+                  <v-text-field
+                    id="password"
+                    label="Пароль"
+                    name="password"
+                    type="password"
+                    required
+                  ></v-text-field>
+                  <v-card-actions>
+                    <div class="flex-grow-1"></div>
+                    <v-btn color="primary" @click="login">Вход</v-btn>
+                  </v-card-actions>
                 </v-form>
               </v-card-text>
             </v-card>
