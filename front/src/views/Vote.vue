@@ -27,6 +27,74 @@
           </h3>
           <v-divider></v-divider>
           <h3 class="my-2 mx-3">Обсуждение</h3>
+          <div style="height: 300px; overflow-y: scroll">
+            <v-btn block depressed>
+              <v-icon class="mr-2">mdi-thumb-up-outline</v-icon>За
+            </v-btn>
+            <v-btn block depressed>
+              <v-icon class="mr-2">mdi-thumb-up-outline</v-icon>За
+            </v-btn>
+            <v-btn block depressed>
+              <v-icon class="mr-2">mdi-thumb-up-outline</v-icon>За
+            </v-btn>
+            <v-btn block depressed>
+              <v-icon class="mr-2">mdi-thumb-up-outline</v-icon>За
+            </v-btn>
+            <v-btn block depressed>
+              <v-icon class="mr-2">mdi-thumb-up-outline</v-icon>За
+            </v-btn>
+            <v-btn block depressed>
+              <v-icon class="mr-2">mdi-thumb-up-outline</v-icon>За
+            </v-btn>
+            <v-btn block depressed>
+              <v-icon class="mr-2">mdi-thumb-up-outline</v-icon>За
+            </v-btn>
+            <v-btn block depressed>
+              <v-icon class="mr-2">mdi-thumb-up-outline</v-icon>За
+            </v-btn>
+            <v-btn block depressed>
+              <v-icon class="mr-2">mdi-thumb-up-outline</v-icon>За
+            </v-btn>
+            <v-btn block depressed>
+              <v-icon class="mr-2">mdi-thumb-up-outline</v-icon>За
+            </v-btn>
+            <v-btn block depressed>
+              <v-icon class="mr-2">mdi-thumb-up-outline</v-icon>За
+            </v-btn>
+            <v-btn block depressed>
+              <v-icon class="mr-2">mdi-thumb-up-outline</v-icon>За
+            </v-btn>
+            <v-btn block depressed>
+              <v-icon class="mr-2">mdi-thumb-up-outline</v-icon>За
+            </v-btn>
+            <v-btn block depressed>
+              <v-icon class="mr-2">mdi-thumb-up-outline</v-icon>За
+            </v-btn>
+            <v-btn block depressed>
+              <v-icon class="mr-2">mdi-thumb-up-outline</v-icon>За
+            </v-btn>
+            <v-btn block depressed>
+              <v-icon class="mr-2">mdi-thumb-up-outline</v-icon>За
+            </v-btn>
+            <v-btn block depressed>
+              <v-icon class="mr-2">mdi-thumb-up-outline</v-icon>За
+            </v-btn>
+          </div>
+          <v-text-field
+            v-model="message"
+            :append-outer-icon="'mdi-send'"
+            :prepend-icon="icon"
+            filled
+            clear-icon="mdi-close-circle"
+            clearable
+            label="Message"
+            type="text"
+            @click:append="toggleMarker"
+            @click:append-outer="sendMessage"
+            @click:prepend="changeIcon"
+            @click:clear="clearMessage"
+          ></v-text-field>
+
           <v-divider></v-divider>
           <h3 class="my-2 mx-3">Голосовать</h3>
           <v-row no-gutters>
@@ -47,7 +115,7 @@
           <v-row no-gutters>
             <v-col>
               <v-btn block depressed color="primary">
-                <v-icon class="mr-2">mdi-thumb-up</v-icon>За
+                <v-icon class="mr-2">mdi-thumb-up-outline</v-icon>За
               </v-btn>
             </v-col>
             <v-col>
@@ -55,7 +123,7 @@
             </v-col>
             <v-col>
               <v-btn block depressed color="primary">
-                <v-icon class="mr-2">mdi-thumb-down</v-icon>Против
+                <v-icon class="mr-2">mdi-thumb-down-outline</v-icon>Против
               </v-btn>
             </v-col>
           </v-row>
