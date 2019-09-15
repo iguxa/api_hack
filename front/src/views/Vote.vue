@@ -46,17 +46,15 @@
           </v-row>
           <v-row no-gutters>
             <v-col>
-              <v-btn block depressed>
+              <v-btn block depressed color="primary">
                 <v-icon class="mr-2">mdi-thumb-up</v-icon>За
               </v-btn>
             </v-col>
             <v-col>
-              <v-btn block depressed>
-                <v-icon class="mr-2">mdi-radiobox-blank</v-icon>Воздержаться
-              </v-btn>
+              <v-btn block depressed color="primary">Воздержаться</v-btn>
             </v-col>
             <v-col>
-              <v-btn block depressed>
+              <v-btn block depressed color="primary">
                 <v-icon class="mr-2">mdi-thumb-down</v-icon>Против
               </v-btn>
             </v-col>
