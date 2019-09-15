@@ -32,10 +32,11 @@
 
 <script>
 import VoteListItem from "./VoteListItem";
+import axios from 'axios';
 
 export default {
   props: {
-      pageSize: {Number, default: 10}
+      pageSize: {Number, default: 20}
   },
   components: {VoteListItem},
   data: () => ({
@@ -81,35 +82,18 @@ export default {
               pageSize = this.pageSize;
           }
           return new Promise((resolve) => {
-              if(typeof(filter.active)!=='undefined') {
-                  if(filter.active) {
-                      resolve([
-                          { title: 'Pre-fab homes', src: 'https://cdn.vuetifyjs.com/images/cards/house.jpg', flex: 12 },
-                          { title: 'Favorite road trips', src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg', flex: 6 },
-                          { title: 'Best airlines', src: 'https://cdn.vuetifyjs.com/images/cards/plane.jpg', flex: 6 },
-                      ]);
-                  } else {
-                      resolve([
-                          { title: 'Pre-fab homes', src: 'https://cdn.vuetifyjs.com/images/cards/house.jpg', flex: 12 },
-                          { title: 'Favorite road trips', src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg', flex: 6 },
-                          { title: 'Best airlines', src: 'https://cdn.vuetifyjs.com/images/cards/plane.jpg', flex: 6 },
-                          { title: 'Best airlines', src: 'https://cdn.vuetifyjs.com/images/cards/plane.jpg', flex: 6 },
-                          { title: 'Best airlines', src: 'https://cdn.vuetifyjs.com/images/cards/plane.jpg', flex: 6 },
-                      ]);
-                  }
+            axios.defaults.headers.common['Authorization'] = `9f6cbd24b80c695d849f2930315ad22ea90cab9f065da8cb1b2e98723f2b323f`;
+            axios.get('http://back.tsybykov.tk/api/votes', {
+              headers: {
+                Authorization: '9f6cbd24b80c695d849f2930315ad22ea90cab9f065da8cb1b2e98723f2b323f'
               }
-              resolve([
-                  { title: 'Pre-fab homes', src: 'https://cdn.vuetifyjs.com/images/cards/house.jpg', flex: 12 },
-                  { title: 'Favorite road trips', src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg', flex: 6 },
-                  { title: 'Best airlines', src: 'https://cdn.vuetifyjs.com/images/cards/plane.jpg', flex: 6 },
-                  { title: 'Best airlines', src: 'https://cdn.vuetifyjs.com/images/cards/plane.jpg', flex: 6 },
-                  { title: 'Best airlines', src: 'https://cdn.vuetifyjs.com/images/cards/plane.jpg', flex: 6 },
-                  { title: 'Best airlines', src: 'https://cdn.vuetifyjs.com/images/cards/plane.jpg', flex: 6 },
-                  { title: 'Best airlines', src: 'https://cdn.vuetifyjs.com/images/cards/plane.jpg', flex: 6 },
-                  { title: 'Best airlines', src: 'https://cdn.vuetifyjs.com/images/cards/plane.jpg', flex: 6 },
-                  { title: 'Best airlines', src: 'https://cdn.vuetifyjs.com/images/cards/plane.jpg', flex: 6 },
-                  { title: 'Best airlines', src: 'https://cdn.vuetifyjs.com/images/cards/plane.jpg', flex: 6 },
-              ]);
+            })
+            .then(function (response) {
+              resolve(response.data);
+            })
+            .catch(function (error) {
+              console.log(error);
+            });
           });
       },
   },
