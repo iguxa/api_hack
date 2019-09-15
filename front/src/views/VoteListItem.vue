@@ -17,7 +17,7 @@
       </div>
     </v-expand-transition>
     <v-card-text class="pt-0">
-      <span v-if="item.status" class="green--text">Active</span>
+      <span v-if="item.status" class="green--text">Активен</span>
       <span v-if="!item.status" class="red--text">Завершен</span>
     </v-card-text>
 
@@ -49,7 +49,7 @@ export default {
   }),
   methods: {
     goToDetails() {
-      this.$router.push({ name: "vote", params: { id: "1" } });
+      this.$router.push({ name: "vote", params: { id: this.item.id } });
     }
   }
 };

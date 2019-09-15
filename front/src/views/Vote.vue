@@ -8,6 +8,9 @@
         <p
           class="pv-2"
         >Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias aut nihil alias repellendus tempore, modi facere explicabo beatae blanditiis pariatur incidunt voluptatibus repudiandae animi aliquam! Possimus pariatur provident dolores qui.</p>
+ <p
+          class="pv-2"
+        >Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias aut nihil alias repellendus tempore, modi facere explicabo beatae blanditiis pariatur incidunt voluptatibus repudiandae animi aliquam! Possimus pariatur provident dolores qui.</p>
 
         <v-row>
           <v-col v-bind:key="file.id" cols="12" v-for="file in files">
@@ -20,72 +23,41 @@
         <v-card outlined>
           <h3 class="my-2 mx-3">
             Статус конкурса:
-            <v-chip class="ma-2" outlined>Неактивен</v-chip>
-            <v-chip class="ma-2" color="primary" outlined>Активен</v-chip>
+            <v-chip class="ma-2" outlined v-if="id>3">Завершен</v-chip>
+            <v-chip class="ma-2" color="primary" outlined v-if="id<=3">Активен</v-chip>
           </h3>
           <v-divider></v-divider>
           <h3 class="my-2 mx-3">
             Текущий этап конкурса:
-            <v-chip class="ma-2" color="orange" outlined>Подготовка</v-chip>
-            <v-chip class="ma-2" color="green" outlined>Голосование</v-chip>
-            <v-chip class="ma-2" outlined>Не состоялся</v-chip>
-            <v-chip class="ma-2" color="red" outlined>Отменён</v-chip>
-            <v-chip class="ma-2" color="primary" outlined>Завершён</v-chip>
+            <v-chip class="ma-2" color="orange" v-if="id>20" outlined>Подготовка</v-chip>
+            <v-chip class="ma-2" color="green" v-if="id<=3" outlined>Голосование</v-chip>
+            <v-chip class="ma-2" outlined v-if="id>=5 && id<=7">Не состоялся</v-chip>
+            <v-chip class="ma-2" color="red" outlined v-if="id>=3 && id<5">Отменён</v-chip>
+            <v-chip class="ma-2" color="primary" v-if="id>7" outlined>Завершён</v-chip>
           </h3>
           <v-divider></v-divider>
           <h3 class="my-2 mx-3">Обсуждение</h3>
-          <div style="height: 300px; overflow-y: scroll">
-            <v-btn block depressed>
-              <v-icon class="mr-2">mdi-thumb-up-outline</v-icon>За
-            </v-btn>
-            <v-btn block depressed>
-              <v-icon class="mr-2">mdi-thumb-up-outline</v-icon>За
-            </v-btn>
-            <v-btn block depressed>
-              <v-icon class="mr-2">mdi-thumb-up-outline</v-icon>За
-            </v-btn>
-            <v-btn block depressed>
-              <v-icon class="mr-2">mdi-thumb-up-outline</v-icon>За
-            </v-btn>
-            <v-btn block depressed>
-              <v-icon class="mr-2">mdi-thumb-up-outline</v-icon>За
-            </v-btn>
-            <v-btn block depressed>
-              <v-icon class="mr-2">mdi-thumb-up-outline</v-icon>За
-            </v-btn>
-            <v-btn block depressed>
-              <v-icon class="mr-2">mdi-thumb-up-outline</v-icon>За
-            </v-btn>
-            <v-btn block depressed>
-              <v-icon class="mr-2">mdi-thumb-up-outline</v-icon>За
-            </v-btn>
-            <v-btn block depressed>
-              <v-icon class="mr-2">mdi-thumb-up-outline</v-icon>За
-            </v-btn>
-            <v-btn block depressed>
-              <v-icon class="mr-2">mdi-thumb-up-outline</v-icon>За
-            </v-btn>
-            <v-btn block depressed>
-              <v-icon class="mr-2">mdi-thumb-up-outline</v-icon>За
-            </v-btn>
-            <v-btn block depressed>
-              <v-icon class="mr-2">mdi-thumb-up-outline</v-icon>За
-            </v-btn>
-            <v-btn block depressed>
-              <v-icon class="mr-2">mdi-thumb-up-outline</v-icon>За
-            </v-btn>
-            <v-btn block depressed>
-              <v-icon class="mr-2">mdi-thumb-up-outline</v-icon>За
-            </v-btn>
-            <v-btn block depressed>
-              <v-icon class="mr-2">mdi-thumb-up-outline</v-icon>За
-            </v-btn>
-            <v-btn block depressed>
-              <v-icon class="mr-2">mdi-thumb-up-outline</v-icon>За
-            </v-btn>
-            <v-btn block depressed>
-              <v-icon class="mr-2">mdi-thumb-up-outline</v-icon>За
-            </v-btn>
+          <div style="height: 300px; overflow-y: scroll;background: #f5f5f5;">
+            <v-row justify="end">
+                <v-chip class="mr-5 ma-2" outlined><b class="mr-1">Иванов Иван: </b> всем привет</v-chip>
+            </v-row>
+            <v-chip class="ma-2" outlined><b class="mr-1">Иванов Иван: </b> я считаю надо дать ребятам шанс</v-chip>
+            <v-chip class="ma-2" outlined><b class="mr-1">Иванов Иван: </b> всем привет</v-chip>
+              <v-row justify="end">
+                  <v-chip class="mr-5 ma-2" outlined><b class="mr-1">Иванов Иван: </b> согласен</v-chip>
+              </v-row>
+            <v-chip class="ma-2" outlined><b class="mr-1">Иванов Иван: </b> поддерживаю!</v-chip>
+              <v-row justify="end">
+                  <v-chip class="mr-5 ma-2" outlined><b class="mr-1">Иванов Иван: </b> всем привет</v-chip>
+              </v-row>
+            <v-chip class="ma-2" outlined><b class="mr-1">Иванов Иван: </b> всем привет</v-chip>
+            <v-chip class="ma-2" outlined><b class="mr-1">Иванов Иван: </b> всем привет</v-chip>
+            <v-chip class="ma-2" outlined><b class="mr-1">Иванов Иван: </b> всем привет</v-chip>
+              <v-row justify="end">
+                  <v-chip class="mr-5 ma-2" outlined><b class="mr-1">Иванов Иван: </b> всем привет</v-chip>
+              </v-row>
+            <v-chip class="ma-2" outlined><b class="mr-1">Иванов Иван: </b> всем привет</v-chip>
+            <v-chip class="ma-2" outlined><b class="mr-1">Иванов Иван: </b> всем привет</v-chip>
           </div>
           <v-text-field
             v-model="message"
@@ -94,7 +66,7 @@
             filled
             clear-icon="mdi-close-circle"
             clearable
-            label="Message"
+            label="Сообщение"
             type="text"
             @click:append="toggleMarker"
             @click:append-outer="sendMessage"
@@ -126,6 +98,8 @@
               </v-btn>
             </v-col>
           </v-row>
+            <v-textarea class="pa-2" placeholder="Напишите комментарий"></v-textarea>
+            <v-btn block depressed>Проголосовать</v-btn>
         </v-card>
       </v-col>
     </v-row>
@@ -139,7 +113,7 @@
     },
     data() { return {
       files:[],
-      vote: '',
+      vote: 'yes',
     }},
     methods: {
       load() {

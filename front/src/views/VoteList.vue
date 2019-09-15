@@ -84,33 +84,33 @@ export default {
           if(typeof(filter.active)!=='undefined') {
             if (filter.active) {
               resolve([
-                {title: 'Название конкурса', status: true},
-                {title: 'Название конкурса', status: true},
-                {title: 'Название конкурса', status: true},
+                {title: 'Название конкурса', status: true, id: 1},
+                {title: 'Название конкурса', status: true, id: 2},
+                {title: 'Название конкурса', status: true, id: 3},
               ]);
             } else {
               resolve([
-                {title: 'Название конкурса', status: false},
-                {title: 'Название конкурса', status: false},
-                {title: 'Название конкурса', status: false},
-                {title: 'Название конкурса', status: false},
-                {title: 'Название конкурса', status: false},
-                {title: 'Название конкурса', status: false},
-                {title: 'Название конкурса', status: false},
+                {title: 'Название конкурса', status: false, id: 4},
+                {title: 'Название конкурса', status: false, id: 5},
+                {title: 'Название конкурса', status: false, id: 6},
+                {title: 'Название конкурса', status: false, id: 7},
+                {title: 'Название конкурса', status: false, id: 8},
+                {title: 'Название конкурса', status: false, id: 9},
+                {title: 'Название конкурса', status: false, id: 10},
               ]);
             }
           } else {
             resolve([
-              {title: 'Название конкурса', status: true},
-              {title: 'Название конкурса', status: true},
-              {title: 'Название конкурса', status: false},
-              {title: 'Название конкурса', status: true},
-              {title: 'Название конкурса', status: false},
-              {title: 'Название конкурса', status: false},
-              {title: 'Название конкурса', status: false},
-              {title: 'Название конкурса', status: false},
-              {title: 'Название конкурса', status: false},
-              {title: 'Название конкурса', status: false},
+              {title: 'Название конкурса', status: true, id: 1},
+              {title: 'Название конкурса', status: true, id: 2},
+              {title: 'Название конкурса', status: false, id: 4},
+              {title: 'Название конкурса', status: true, id: 3},
+              {title: 'Название конкурса', status: false, id: 5},
+              {title: 'Название конкурса', status: false, id: 6},
+              {title: 'Название конкурса', status: false, id: 7},
+              {title: 'Название конкурса', status: false, id: 8},
+              {title: 'Название конкурса', status: false, id: 9},
+              {title: 'Название конкурса', status: false, id: 10},
             ]);
           }
         });
@@ -121,12 +121,3 @@ export default {
     }
 };
 </script>
-
-<styles>
-  .fade-enter-active, .fade-leave-active {
-  transition: opacity .5s;
-  }
-  .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
-  opacity: 0;
-  }
-</styles>
