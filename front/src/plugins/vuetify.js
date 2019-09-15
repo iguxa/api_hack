@@ -8,7 +8,7 @@ export default new Vuetify({
   theme: {
     themes: {
       light: {
-        primary: '#ee44aa',
+        primary: '#0a2896', /* VTB brand color and second #ed1c24*/
         secondary: '#424242',
         accent: '#82B1FF',
         error: '#FF5252',
