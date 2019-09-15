@@ -31,8 +31,8 @@
 </template>
 
 <script>
-import VoteListItem from "./VoteListItem";
 import axios from 'axios';
+import VoteListItem from "./VoteListItem";
 
 export default {
   props: {
@@ -82,11 +82,15 @@ export default {
               pageSize = this.pageSize;
           }
           return new Promise((resolve) => {
-            axios.defaults.headers.common['Authorization'] = `9f6cbd24b80c695d849f2930315ad22ea90cab9f065da8cb1b2e98723f2b323f`;
+            //axios.defaults.headers.common['Authorization'] = `9f6cbd24b80c695d849f2930315ad22ea90cab9f065da8cb1b2e98723f2b323f`;
             axios.get('http://back.tsybykov.tk/api/votes', {
-              headers: {
-                Authorization: '9f6cbd24b80c695d849f2930315ad22ea90cab9f065da8cb1b2e98723f2b323f'
-              }
+               mode: 'cors', // no-cors, *cors, same-origin
+        cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+        credentials: 'same-origin', // include, *same-origin, omit
+        headers: {
+            // 'Content-Type': 'application/json',
+                Authorization: '9f6cbd24b80c695d849f2930315ad22ea90cab9f065da8cb1b2e98723f2b323f',
+                              }
             })
             .then(function (response) {
               resolve(response.data);
