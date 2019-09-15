@@ -10,7 +10,7 @@
       >
         <v-switch
                 v-model="all"
-                label="Show all"
+                label="Показать все"
         ></v-switch>
       </v-row>
     </v-list-item>
@@ -25,18 +25,17 @@
       </v-col>
     </v-row>
     <div class="text-center pa-10">
-      <v-btn @click="loadNext" v-if="hasNext">Show more</v-btn>
+      <v-btn @click="loadNext" v-if="hasNext">Показать больше</v-btn>
     </div>
   </v-container>
 </template>
 
 <script>
-import axios from 'axios';
 import VoteListItem from "./VoteListItem";
 
 export default {
   props: {
-      pageSize: {Number, default: 20}
+      pageSize: {Number, default: 10}
   },
   components: {VoteListItem},
   data: () => ({
@@ -52,7 +51,7 @@ export default {
   },
   methods: {
       reload() {
-          this.hasNext = 1;
+        this.nextPage = 1;
           this.loadPage(1).then(items => {
               this.items = items;
               this.hasNext = items.length>=this.pageSize;
@@ -78,26 +77,56 @@ export default {
           return filter;
       },
       fetch(filter = {}, page = 1, pageSize = null) {
-          if(!pageSize) {
-              pageSize = this.pageSize;
+        if(!pageSize) {
+          pageSize = this.pageSize;
+        }
+        return new Promise((resolve) => {
+          if(typeof(filter.active)!=='undefined') {
+            if (filter.active) {
+              resolve([
+                {title: 'Название конкурса', status: true},
+                {title: 'Название конкурса', status: true},
+                {title: 'Название конкурса', status: true},
+              ]);
+            } else {
+              resolve([
+                {title: 'Название конкурса', status: false},
+                {title: 'Название конкурса', status: false},
+                {title: 'Название конкурса', status: false},
+                {title: 'Название конкурса', status: false},
+                {title: 'Название конкурса', status: false},
+                {title: 'Название конкурса', status: false},
+                {title: 'Название конкурса', status: false},
+              ]);
+            }
+          } else {
+            resolve([
+              {title: 'Название конкурса', status: true},
+              {title: 'Название конкурса', status: true},
+              {title: 'Название конкурса', status: false},
+              {title: 'Название конкурса', status: true},
+              {title: 'Название конкурса', status: false},
+              {title: 'Название конкурса', status: false},
+              {title: 'Название конкурса', status: false},
+              {title: 'Название конкурса', status: false},
+              {title: 'Название конкурса', status: false},
+              {title: 'Название конкурса', status: false},
+            ]);
           }
-          return new Promise((resolve) => {
-            axios.get('http://localhost:85/api/votes', {
-              headers: {
-                Authorization: '9f6cbd24b80c695d849f2930315ad22ea90cab9f065da8cb1b2e98723f2b323f'
-              }
-            })
-            .then(function (response) {
-              resolve(response.data.data);
-            })
-            .catch(function (error) {
-              console.log(error);
-            });
-          });
-      },
+        });
+      }
   },
     mounted() {
         this.reload();
     }
 };
 </script>
+
+<styles>
+  .fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+  }
+  .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+  }
+</styles>
