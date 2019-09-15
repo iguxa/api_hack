@@ -13,20 +13,54 @@
         <v-card outlined>
           <h3 class="my-2 mx-3">
             Статус конкурса:
-            <v-chip class="ma-2">Неактивен</v-chip>
-            <v-chip class="ma-2" color="primary">Активен</v-chip>
+            <v-chip class="ma-2" outlined>Неактивен</v-chip>
+            <v-chip class="ma-2" color="primary" outlined>Активен</v-chip>
           </h3>
           <v-divider></v-divider>
           <h3 class="my-2 mx-3">
             Текущий этап конкурса:
-            <v-chip class="ma-2" color="orange" text-color="white">Подготовка</v-chip>
-            <v-chip class="ma-2" color="green" text-color="white">Голосование</v-chip>
-            <v-chip class="ma-2">Не состоялся</v-chip>
-            <v-chip class="ma-2" color="red" text-color="white">Отменён</v-chip>
-            <v-chip class="ma-2" color="primary">Завершён</v-chip>
+            <v-chip class="ma-2" color="orange" outlined>Подготовка</v-chip>
+            <v-chip class="ma-2" color="green" outlined>Голосование</v-chip>
+            <v-chip class="ma-2" outlined>Не состоялся</v-chip>
+            <v-chip class="ma-2" color="red" outlined>Отменён</v-chip>
+            <v-chip class="ma-2" color="primary" outlined>Завершён</v-chip>
           </h3>
           <v-divider></v-divider>
           <h3 class="my-2 mx-3">Обсуждение</h3>
+          <v-divider></v-divider>
+          <h3 class="my-2 mx-3">Голосовать</h3>
+          <v-row no-gutters>
+            <v-col>
+              <v-btn block depressed>
+                <v-icon class="mr-2">mdi-thumb-up-outline</v-icon>За
+              </v-btn>
+            </v-col>
+            <v-col>
+              <v-btn block depressed>Воздержаться</v-btn>
+            </v-col>
+            <v-col>
+              <v-btn block depressed>
+                <v-icon class="mr-2">mdi-thumb-down-outline</v-icon>Против
+              </v-btn>
+            </v-col>
+          </v-row>
+          <v-row no-gutters>
+            <v-col>
+              <v-btn block depressed>
+                <v-icon class="mr-2">mdi-thumb-up</v-icon>За
+              </v-btn>
+            </v-col>
+            <v-col>
+              <v-btn block depressed>
+                <v-icon class="mr-2">mdi-radiobox-blank</v-icon>Воздержаться
+              </v-btn>
+            </v-col>
+            <v-col>
+              <v-btn block depressed>
+                <v-icon class="mr-2">mdi-thumb-down</v-icon>Против
+              </v-btn>
+            </v-col>
+          </v-row>
         </v-card>
       </v-col>
     </v-row>
