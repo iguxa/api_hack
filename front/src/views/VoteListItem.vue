@@ -26,13 +26,9 @@
       <div class="flex-grow-1"></div>
       <v-list-item>
         <v-row align="center" justify="end">
-          <v-btn class="ma-2" text icon color="blue lighten-2">
-            <v-icon>mdi-thumb-up</v-icon>
-          </v-btn>
+          <v-icon class="ma-2" color="blue lighten-2">mdi-thumb-up</v-icon>
           <span class="subheading mr-2">256</span>
-          <v-btn class="ma-2" text icon color="red lighten-2">
-            <v-icon>mdi-thumb-down</v-icon>
-          </v-btn>
+          <v-icon class="ma-2" color="red lighten-2">mdi-thumb-down</v-icon>
           <span class="subheading">45</span>
         </v-row>
       </v-list-item>

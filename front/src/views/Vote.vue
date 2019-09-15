@@ -8,6 +8,13 @@
         <p
           class="pv-2"
         >Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias aut nihil alias repellendus tempore, modi facere explicabo beatae blanditiis pariatur incidunt voluptatibus repudiandae animi aliquam! Possimus pariatur provident dolores qui.</p>
+
+        <v-row>
+          <v-col v-bind:key="file.id" cols="12" v-for="file in files">
+            <v-icon large class="ma-2" color="red lighten-2">{{getFileIcon(file)}}</v-icon>
+            <a target="_blank" :href="getFileUrl(file)" class="subheading mr-2">{{file.title}}</a>
+          </v-col>
+        </v-row>
       </v-col>
       <v-col cols="12" sm="4">
         <v-card outlined>
@@ -132,3 +139,54 @@
     </v-row>
   </v-container>
 </template>
+
+<script>
+  export default {
+    props: {
+      id: { Number, required:true }
+    },
+    data() { return {
+      files:[],
+    }},
+    methods: {
+      load() {
+        this.fetch(this.id).then(data => {
+          this.files = data.files;
+        });
+      },
+      fetch(id) {
+        return new Promise(function (resolve) {
+          resolve({
+            files: [{
+              id: 1,
+              title: 'instruction.pdf',
+            }, {
+              id: 2,
+              title: 'instruction.doc'
+            }, {
+              id: 3,
+              title: 'instruction.txt'
+            }],
+          });
+        });
+      },
+      getFileIcon(file) {
+        let extMap = {
+          pdf: 'pdf',
+          doc: 'word',
+          docx: 'word',
+          xls: 'excel',
+          xlsx: 'excel',
+        };
+        let ext = file.title.split('.').splice(-1, 1);
+        return 'mdi-file'+(typeof(extMap[ext])!=='undefined'?'-'+extMap[ext]:'');
+      },
+      getFileUrl(file) {
+        return '/file/'+file.id
+      }
+    },
+    mounted() {
+      this.load();
+    }
+  };
+</script>
