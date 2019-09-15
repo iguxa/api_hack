@@ -106,15 +106,22 @@
           <h3 class="my-2 mx-3">Голосовать</h3>
           <v-row no-gutters>
             <v-col>
-              <v-btn block depressed color="primary">
+              <v-btn v-if="vote==='yes'" block depressed color="primary">
+                <v-icon class="mr-2">mdi-thumb-up-outline</v-icon>За
+              </v-btn>
+              <v-btn @click="vote='yes'" v-if="vote!=='yes'" block depressed>
                 <v-icon class="mr-2">mdi-thumb-up-outline</v-icon>За
               </v-btn>
             </v-col>
             <v-col>
-              <v-btn block depressed color="primary">Воздержаться</v-btn>
+              <v-btn v-if="vote==='neutral'" block depressed color="primary">Воздержаться</v-btn>
+              <v-btn @click="vote='neutral'" v-if="vote!=='neutral'" block depressed>Воздержаться</v-btn>
             </v-col>
             <v-col>
-              <v-btn block depressed color="primary">
+              <v-btn v-if="vote==='no'" block depressed color="primary">
+                <v-icon class="mr-2">mdi-thumb-down-outline</v-icon>Против
+              </v-btn>
+              <v-btn @click="vote='no'" v-if="vote!=='no'" block depressed>
                 <v-icon class="mr-2">mdi-thumb-down-outline</v-icon>Против
               </v-btn>
             </v-col>
@@ -132,7 +139,7 @@
     },
     data() { return {
       files:[],
-      vote: false,
+      vote: '',
     }},
     methods: {
       load() {
