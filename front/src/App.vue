@@ -5,9 +5,7 @@
         <span>Vote system</span>
       </v-toolbar-title>
       <v-spacer></v-spacer>
-      <router-link :to="{name:'about'}" class="mr-2">About</router-link>
-      <router-link :to="{name:'login'}" class="mr-2">Login</router-link>
-      <router-link :to="{name:'vote', params: {id:'1'}}" class="mr-2">Vote</router-link>
+      <router-link :to="{name:'login'}" class="mr-2">Выйти</router-link>
     </v-app-bar>
 
     <v-content>
